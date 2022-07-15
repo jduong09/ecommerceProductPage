@@ -1,0 +1,70 @@
+/* Universal Styles */
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+.hide {
+  display: none !important;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+/* Header .header-left-side .header-right-side */
+.header-left-side, .header-right-side {
+  display: flex;
+  align-items: center;
+}
+
+#header-logo {
+  width: 138px;
+  height: 20px;
+  margin-left: 1rem;
+}
+/* Header #header-menu */
+#header-menu {
+  position: relative;
+}
+
+#header-nav {
+  position: absolute;
+  width: 20%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  padding: 1rem;
+}
+
+#nav-mobile-hamburger {
+  width: 16px;
+  height: 15px;
+}
+
+#nav-mobile-close {
+  width: 14px;
+  height: 15px;
+}
+
+#header-nav > ul {
+}
+
+#header-nav > ul > li {
+  margin-bottom: 1rem;
+}
+
+/* Header #header-shopping-cart */
+#header-shopping-cart {
+  width: 22px;
+  height: 20px;
+  margin-right: 1rem;
+}
+
+/* Header #header-pfp */
+#header-pfp {
+  width: 24px;
+  height: 24px;
+}
+/* Main */
