@@ -1,5 +1,6 @@
 /* Universal Styles */
 body {
+  position: relative;
   font-family: 'Kumbh Sans', sans-serif;
 }
 
@@ -14,6 +15,15 @@ header {
   padding: 1.5rem;
 }
 /* Header .header-left-side .header-right-side */
+#header-menu-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: hsla(0, 0%, 0%, .75);
+  z-index: 2;
+}
 .header-left-side, .header-right-side {
   display: flex;
   align-items: center;
@@ -25,17 +35,15 @@ header {
   margin-left: 1rem;
 }
 /* Header #header-menu */
-#header-menu {
-  position: relative;
-}
-
 #header-nav {
-  position: absolute;
-  width: 20%;
-  height: 100vh;
+  width: 70%;
+  height: 100%;
+  position: fixed;
   left: 0;
   top: 0;
-  padding: 1rem;
+  padding: 1.5rem;
+  background-color: hsl(0, 0%, 100%);
+  z-index: 3;
 }
 
 #nav-mobile-hamburger {
@@ -49,10 +57,12 @@ header {
 }
 
 #header-nav > ul {
+  margin-top: 3rem;
 }
 
 #header-nav > ul > li {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
 }
 
 /* Header #header-shopping-cart */
@@ -68,3 +78,25 @@ header {
   height: 24px;
 }
 /* Main */
+
+/* Main .product-carousel */
+.product-carousel {
+  position: relative;
+}
+
+.product-carousel > svg {
+  padding: .75rem;
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 100%);
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+}
+
+#icon-previous {
+  left: 5%;
+}
+
+#icon-next {
+  right: 5%;
+}
