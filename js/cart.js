@@ -3,7 +3,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const minusIcon = document.getElementById('minus-icon');
   const plusIcon = document.getElementById('plus-icon');
   const cartInventory = document.getElementById('shopping-cart-inventory');
+  const shoppingCartBtn = document.getElementById('header-shopping-cart-btn');
+  const shoppingCart = document.getElementById('shopping-cart');
 
+  shoppingCartBtn.addEventListener('click', (e) => {
+    if (shoppingCart.classList.contains('hide')) {
+      shoppingCart.classList.remove('hide');
+    } else {
+      shoppingCart.classList.add('hide');
+    }
+  });
+ 
   let newCartAmount = 0;
   let submittedCart = 0;
   minusIcon.addEventListener('click', (e) => {
@@ -46,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cartItemPriceContainer.innerHTML = `$125.00 x ${shoesQuantity}`;
 
     const cartItemTotal = document.createElement('span');
-    cartItemTotal.innerHTML = `$${125.00 * shoesQuantity}`;
+    cartItemTotal.innerHTML = `$${(125.00 * shoesQuantity).toFixed(2)}`;
     cartItemTotal.id = 'cart-item-total';
 
     cartItemPriceContainer.append(cartItemTotal);
@@ -65,9 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
     cartItemDeleteBtn.addEventListener('click', (e) => {
       e.preventDefault();
 
-      console.log(e.target.parentElement.parentElement);
+      const shoppingCartInventory = e.target.parentElement.parentElement.parentElement;
 
-      e.target.parentElement.parentElement.remove();
+      shoppingCartInventory.children[0].remove();
+      shoppingCartInventory.children[0].remove();
+
+      shoppingCartInventory.innerHTML = 'Your cart is empty.';
+      shoppingCartInventory.classList.remove('filled');
       
     });
 
