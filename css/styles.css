@@ -2,13 +2,14 @@
 body {
   position: relative;
   font-family: 'Kumbh Sans', sans-serif;
+  min-height: 100vh;
 }
 
 .hide {
   display: none !important;
 }
 
-#nav-mobile-hamburger, #nav-mobile-close, #header-nav > ul > li, #header-shopping-cart, #header-pfp, #cart-icon-delete, #icon-previous, #icon-next, #minus-icon, #plus-icon, .cart-button {
+#nav-mobile-hamburger, #nav-mobile-close, #header-nav > ul > li, #header-shopping-cart, #header-shopping-cart-btn, #header-pfp, #cart-icon-delete, #icon-previous, #icon-next, #minus-icon, #plus-icon, .cart-button {
   cursor: pointer;
 }
 
@@ -75,9 +76,13 @@ header {
 }
 
 /* Header header-shopping-cart */
-#header-shopping-cart {
+#img-shopping-cart {
   width: 22px;
   height: 20px;
+}
+
+#img-shopping-cart:hover > path {
+  fill: hsla(0, 0%, 0%);
 }
 
 #shopping-cart {
@@ -141,8 +146,14 @@ header {
 
 /* Header #header-pfp */
 #header-pfp {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+}
+
+#header-pfp:hover {
+  border-color: hsl(26, 100%, 55%);
 }
 /* Main */
 
@@ -158,6 +169,10 @@ header {
   position: absolute;
   z-index: 2;
   top: 50%;
+}
+
+.product-carousel > svg:hover > path {
+  stroke: hsl(26, 100%, 55%);
 }
 
 #icon-previous {
@@ -259,8 +274,84 @@ header {
   background-color: hsl(26, 100%, 55%);
 }
 
+.cart-button:hover, #plus-icon:hover, #minus-icon:hover {
+  opacity: .5;
+}
+
 #cart-icon {
   width: 22px;
   height: 20px;
   margin-right: 1rem;
+}
+
+@media (min-width: 576px) {
+  #shopping-cart {
+    width: 55%;
+    height: 25%;
+    left: 42%;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+  }
+
+  #shopping-cart > h2 {
+    padding: 1rem;
+  }
+
+  .product-carousel {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  #product-list {
+    margin-bottom: 1rem;
+  }
+
+  .product-item > img {
+    border-radius: 10px;
+  }
+
+  .product-thumbnail-list {
+    width: 100%;
+  }
+
+  .product-thumbnail-list > ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .product-thumbnail-list > ul > li {
+    width: 20%;
+  }
+
+  .product-thumbnail {
+    border-radius: 10px;
+  }
+
+  .product-thumbnail:hover {
+    opacity: .5;
+  }
+
+  .product-thumbnail.highlight {
+    opacity: .25;
+  }
+
+  .cart-amount, .cart-button {
+    width: 60%
+  }
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1400px) {
+
 }
