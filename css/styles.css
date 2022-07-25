@@ -288,8 +288,18 @@ header {
   #shopping-cart {
     width: 55%;
     height: 25%;
-    left: 42%;
+    left: initial;
+    right: 2.5%;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+  }
+
+  #shopping-cart.filled {
+    padding: 1rem;
+  }
+
+  .cart-button {
+    margin: 0 auto;
+    padding: .75rem 1rem;
   }
 
   #shopping-cart > h2 {
@@ -336,7 +346,7 @@ header {
   }
 
   .cart-amount, .cart-button {
-    width: 60%
+    width: 50%;
   }
 }
 

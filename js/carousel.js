@@ -48,6 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
       iconPrev.classList.add('hide');
       iconNext.classList.add('hide');
       productThumbnailListDiv.classList.remove('hide');
+    } else {
+      iconPrev.classList.remove('hide');
+      iconNext.classList.remove('hide');
+      productThumbnailListDiv.classList.add('hide');
     }
   });
 
@@ -55,5 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
     iconPrev.classList.add('hide');
     iconNext.classList.add('hide');
     productThumbnailListDiv.classList.remove('hide');
+  } else {
+    iconPrev.classList.remove('hide');
+    iconNext.classList.remove('hide');
+    productThumbnailListDiv.classList.add('hide');
   }
 });
