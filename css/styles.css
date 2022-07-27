@@ -9,7 +9,8 @@ body {
   display: none !important;
 }
 
-#nav-mobile-hamburger, #nav-mobile-close, #header-nav > ul > li, #header-shopping-cart, #header-shopping-cart-btn, #header-pfp, #cart-icon-delete, #icon-previous, #icon-next, #minus-icon, #plus-icon, .cart-button {
+#nav-mobile-hamburger, #nav-mobile-close, #header-nav > ul > li, #header-shopping-cart, #header-shopping-cart-btn, #header-pfp, #cart-icon-delete,
+#icon-previous, #icon-next, #minus-icon, #plus-icon, .cart-button, #lightbox-icon-previous, #lightbox-icon-next {
   cursor: pointer;
 }
 
@@ -162,7 +163,7 @@ header {
   position: relative;
 }
 
-.product-carousel > svg {
+#icon-next, #icon-previous, #lightbox-icon-previous, #lightbox-icon-next {
   padding: .75rem;
   border-radius: 50%;
   background-color: hsl(0, 0%, 100%);
@@ -183,8 +184,9 @@ header {
   right: 5%;
 }
 
-.product-item > img {
+.product-item > img, .product-lightbox-item > img {
   display: block;
+  border-radius: 10px;
 }
 
 /* Main .product-details */
@@ -317,7 +319,7 @@ header {
     margin-bottom: 1rem;
   }
 
-  .product-item > img {
+  .product-item > img, .product-list-item, .product-thumbnail, .product-lightbox-thumbnail {
     border-radius: 10px;
   }
 
@@ -335,15 +337,16 @@ header {
     width: 20%;
   }
 
-  .product-thumbnail {
-    border-radius: 10px;
-  }
-
   .product-thumbnail:hover {
     opacity: .5;
   }
 
-  .product-thumbnail.highlight {
+  li.highlight {
+    border: 2px solid hsl(26, 100%, 55%);
+    border-radius: 10px;
+  }
+
+  li.highlight > .product-thumbnail, li.highlight > .product-lightbox-thumbnail {
     opacity: .25;
   }
 
@@ -453,6 +456,44 @@ header {
 
   .cart-button {
     width: 55%;
+  }
+
+  /* Main .product-lightbox */
+  .product-lightbox {
+    width: 40%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+  }
+
+  .product-lightbox-carousel {
+    margin-bottom: 1rem;
+  }
+
+  .product-lightbox > #lightbox-icon-previous, .product-lightbox > #lightbox-icon-next {
+    top: initial;
+    bottom: calc(50% + 1rem);
+  }
+
+  #lightbox-icon-close {
+    position: absolute;
+    top: -4.5%;
+    right: 0;
+  }
+
+  .product-lightbox > #lightbox-icon-previous {
+    left: -4.5%;
+  }
+
+  .product-lightbox > #lightbox-icon-next {
+    right: -4.5%;
+  }
+
+  .product-lightbox > .product-thumbnail-list {
+    width: 90%;
+    margin: 0 auto;
   }
 }
 
