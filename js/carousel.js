@@ -104,7 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // .product-lightbox-carousel 
   // Event listeners to product-lightbox
   // on header background click, add click event listener
-  headerBackground.addEventListener('click', (e) => {
+  const lightboxCloseIcon = document.getElementById('lightbox-icon-close');
+
+  lightboxCloseIcon.addEventListener('click', (e) => {
     e.preventDefault();
 
     // hide lightbox list, if width >= 992px

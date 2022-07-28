@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const shoppingCartBtn = document.getElementById('header-shopping-cart-btn');
   const shoppingCart = document.getElementById('shopping-cart');
 
-  shoppingCartBtn.addEventListener('click', (e) => {
+  const cartId = document.createElement('span');
+  cartId.id = 'cart-id';
+
+  shoppingCartBtn.addEventListener('click', () => {
     if (shoppingCart.classList.contains('hide')) {
       shoppingCart.classList.remove('hide');
     } else {
@@ -72,8 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
     cartInventory.append(cartItemContainer);
     cartInventory.classList.add('filled');
 
+    cartId.innerHTML = submittedCart;
+    shoppingCartBtn.append(cartId);
+
     cartItemDeleteBtn.addEventListener('click', (e) => {
       e.preventDefault();
+
+      cartId.innerHTML = '';
+      submittedCart = 0;
 
       const shoppingCartInventory = e.target.parentElement.parentElement.parentElement;
 
